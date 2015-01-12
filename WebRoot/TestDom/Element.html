@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Element.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="../base/dom.js"></script>
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<script type="text/javascript">
+		DOM.addEvent(window,'load',function(){
+			DOM.log.header('通过Element by  tag Name');
+			var list = document.getElementById('ullist');
+			var ancestors = list.getElementsByTagName('*');
+			for(var i = 0 ; i < ancestors.length;i++){
+				DOM.log.write(ancestors.item(i).nodeName);
+			}
+		});
+		var list = document.getElementById('ullist');
+		DOM.walkElementsLinear(function func(){},list);
+		DOM.walkTheDOMRecursive(function func(){},list,0,function f(){});
+	</script>
+  </head>
+  
+  <body>
+     This is my HTML page. <br>
+    <div id='firefox' ></div>
+    <hr/>
+    <div  id='ullist'>
+	    <ul>
+	    	<li id='firefoxListItem' title="firefox">
+	    		<a href="#" title="get Firefox" id="firefox">Firefox 2.0</a>
+	    	</li>
+	    	<li>
+	    		<a href="#" title="getMicrsoft Inter" id='msie'>ie11</a>
+	    	</li>
+	    	<li>
+	    		<a href="#" title="check out safari" id='safari'>safari</a>
+	    	</li>
+	    	<li>
+	    		<a href="#" title="getOpera" id='Opera'>Opera</a>
+	    	</li>
+	    </ul>
+    </div>
+  </body>
+</html>

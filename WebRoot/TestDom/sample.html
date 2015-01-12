@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>testBrowserWindowSize.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	 <script type="text/javascript" src="../base/dom.js"></script>
+	 <script type="text/javascript">
+	 	DOM.addEvent(window,'load',function(){
+	 		DOM.log.header("测试 Attributes 和 childNodes方法");
+	 		var h2 = document.getElementsByTagName("H2")[0];
+	 		DOM.log.write(h2.nodeName);
+	 		//判断是否含有孩子节点
+	 		DOM.log.write(h2.nodeName + 'hasChildeNodes' + h2.hasChildNodes());
+	 		//输出孩子节点
+	 		DOM.log.write(h2.nodeName + 'childNodes' + h2.childNodes);
+	 		//计算孩子节点的个数
+	 		DOM.log.write(h2.nodeName+ '孩子节点的个数：'+ h2.childNodes.length);
+	 		
+	 		DOM.log.write(h2.nodeName + 'has attributes '+ h2.hasAttributes());
+	 		DOM.log.write(h2.nodeName+'attributes' + h2.attributes);
+	 		DOM.log.write(h2.nodeName + 'child length' + h2.attributes.length); 
+	 		
+	 	});
+	 </script>
+</head>
+<body>
+    <h1>AdvancED DOM Scripting</h1>
+    <div id="content">
+        <p>Examining the DOM2 Core and DOM2 HTML Recommendations</p>
+        <h2>Browsers</h2>
+        <p>Typically, you'll be expecting the following browsers:</p>
+        <!-- Other browsers could be added but we'll keep the list 
+        short for the example. -->
+        <ul id="browserList">
+            <li id="firefoxListItem">
+                <a href="http://www.getfirefox.com/"
+                    title="Get Firefox" 
+                    id="firefox">Firefox 2.0</a>
+            </li> 
+            <li>
+                <a href="http://www.microsoft.com/windows/ie/downloads/" 
+                    title="Get Microsoft Internet Explorer" 
+                    id="msie">Microsoft Internet Explorer 7</a>
+            </li> 
+            <li>
+                <a href="http://www.apple.com/macosx/features/safari/" 
+                    title="Check out Safari" 
+                    id="safari">Safari</a>
+            </li>
+            <li>
+                <a href="http://www.opera.com/download/" 
+                    title="Get Opera" 
+                    id="opera">Opera 9</a>
+            </li> 
+        </ul>
+    </div>
+
+<div id="where-from">
+	From <a href="http://advanceddomscripting.com" title="AdvancED DOM Scripting">AdvancED DOM Scripting</a> 
+	| <a href="http://www.amazon.com/exec/obidos/ASIN/1590598563/jeffreysamb05-20" title="Buy it on Amazon">Paperback</a>
+</div>
+</body>
+
+</html>

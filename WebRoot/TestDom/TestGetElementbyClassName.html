@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TestGetElementbyClassName.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="../base/dom.js"></script>
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	
+  </head>
+  
+  <body>
+    <div class = "testClass" id="testDIV">
+    	<span class = "testClass">abc</span>
+    	<div class="testClass">ccc</div>
+    1</div>
+    <a class= "testClass">2</a>
+   <span class = "testClass">3</span>
+  </body>
+  <script type="text/javascript" >
+		var elements = DOM.getElementsByClassName("testClass",'*',document);
+		//这个方法可以获得两个tag之间的节点对象
+		var fount = DOM.getElementsByClassName("testClass",'div',DOM.$(testDIV));
+		var k = "";
+		//DOM.toggleDisplay(DOM.$('testDIV'));
+		DOM.toggleDisplay(DOM.$('testDIV'),'inline');
+	</script>
+</html>

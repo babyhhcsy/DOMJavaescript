@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TestLibary.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+	<script type="text/javascript" src="../base/dom.js"></script>
+	<script type="text/javascript">
+		DOM.addEvent(window,'load',function(){
+			var sel = window.getSelection();
+			var sel2 = document.selection.createRange();
+			var k = sel;
+		});
+	</script>
+  </head>
+  
+  <body>
+    This is my HTML page. <br>
+    <div id="firDiv" align="left">abc</div>
+    <div id="secDiv" >cc</div>
+    
+    	<script type="text/javascript">
+/* 		
+	//测试库的兼容性
+	if(DOM.isCompatible()){
+			alert("兼容");
+		}else{
+			alert("不兼容");
+		} 
+*/
+	var norElement = document.getElementById("firDiv");
+	var element = DOM.$("firDiv");
+	var elements = DOM.$("firDiv","secDiv");
+	var k = "abc";
+	</script>
+  </body>
+</html>

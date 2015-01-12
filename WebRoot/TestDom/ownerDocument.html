@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ownerDocument.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="../base/dom.js"></script>
+    <script type="text/javascript">
+    	DOM.addEvent(window,'load',function(){
+    		/* var node = DOM.$('firefox');
+    		var de = node.ownerDocument;
+    		DOM.log.write(de);
+    		DOM.log.header('Append Child');
+    		var newChild = document.createElement('LI');
+    		newChild.appendChild(document.createTextNode('A new list item!'));
+    		var list = document.getElementById('firefox');
+    		list.appendChild(newChild); */
+    		var newChild = document.createElement('A');
+    		newChild.appendChild(document.createTextNode('chorme'));
+    		newChild.setAttribute('href', 'http://www.baidu.com');
+    		var list =document.getElementById('msie');
+    		list.insertBefore(newChild, list.lastChild);
+    		var brChild = document.createElement('BR');
+    		list.insertBefore(brChild, list.lastChild);
+    		
+    	});
+    </script>
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  </head>
+  
+  <body>
+    This is my HTML page. <br>
+    <div id='firefox' ></div>
+    <hr/>
+    <div>
+	    <ul>
+	    	<li id='firefoxListItem' title="firefox">
+	    		<a href="#" title="get Firefox" id="firefox">Firefox 2.0</a>
+	    	</li>
+	    	<li>
+	    		<a href="#" title="getMicrsoft Inter" id='msie'>ie11</a>
+	    	</li>
+	    	<li>
+	    		<a href="#" title="check out safari" id='safari'>safari</a>
+	    	</li>
+	    	<li>
+	    		<a href="#" title="getOpera" id='Opera'>Opera</a>
+	    	</li>
+	    </ul>
+    </div>
+  </body>
+</html>

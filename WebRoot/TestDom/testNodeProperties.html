@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>testNodeProperties.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="../base/dom.js"></script>
+    <script type="text/javascript">
+    //测试nodeName
+   /*  	DOM.addEvent(window,'load',function(){
+    		DOM.log.header("testNodeName");
+    		DOM.log.write("node Name is :" + document.getElementById('firefox').nodeName);
+    		DOM.log.write("nodeType is :" +document.getElementById('firefox').nodeType);
+    	}); */
+    	//遍历得到了body下面的各个元素的名称
+ /*    	DOM.addEvent(window,'load',function(){
+    		DOM.log.header("List child nodes of the document body");
+    		for(var i = 0 ; i < document.body.childNodes.length;i++){
+    		//这里使用的是item方法
+    			DOM.log.write(document.body.childNodes.item(i).nodeName);
+    		//也可以使用item数组的形式
+    		//DOM.log.write(document.body.childNodes[i].nodeName);
+    		}
+    		DOM.log.write(document.body.firstChild.nextSibling.nextSibling.nextSibling.nodeName);
+    	}); */
+    	//Attribute节点属性，节点中配置的内容
+/*     	DOM.addEvent(window,'load',function(){
+    		DOM.log.header("Attribute");
+    		var firefoxAnchor = document.getElementById('firefoxListItem');
+    		for(var i = 0 ; i< firefoxAnchor.attributes.length;i++){
+    			DOM.log.write(firefoxAnchor.attributes.item(i).nodeName
+    				+ '=' + 
+    				 firefoxAnchor.attributes.item(i).nodeValue);
+    		}
+    	}); */
+    	//DOM替换某个节点
+/*     	DOM.addEvent(window,'load',function(){
+    		DOM.log.write("Replace a node");
+    		var newChild = document.createElement('LI');
+    		newChild.appendChild(document.createTextNode("A new list item"));
+    		var firefoxLi = document.getElementById('safari');
+    		firefoxLi.parentNode.replaceChild(newChild, firefoxLi);
+    	}); */
+    	//DOM删除某个节点
+/*     	DOM.addEvent(window,'load',function(){
+    		DOM.log.write('删除某个节点');
+    		var fireFoxLi = document.getElementById('safari');
+    		fireFoxLi.parentNode.removeChild(fireFoxLi);
+    		//fireFoxLi.removeChild(fireFoxLi);这样移除节点会有错误，必须是有父亲节点才可以
+    	}); */
+    	DOM.addEvent(window,'load',function(){
+    		DOM.log.header('Clone and Move a Node');
+    		var fireFoxLi = document.getElementById('safari');
+    		var firefoxLiClone = fireFoxLi.cloneNode(true);
+    		var unorderedList = fireFoxLi.parentNode;
+    		unorderedList.appendChild(fireFoxLi);
+    		unorderedList.appendChild(document.createElement('BR'));
+    		unorderedList.appendChild(firefoxLiClone);//这句话添加了新的节点
+    	});
+    </script>
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  </head>
+  
+  <body>
+    This is my HTML page. <br>
+    <div id='firefox' ></div>
+    <hr/>
+    <div>
+	    <ul>
+	    	<li id='firefoxListItem' title="firefox">
+	    		<a href="#" title="get Firefox" id="firefox">Firefox 2.0</a>
+	    	</li>
+	    	<li>
+	    		<a href="#" title="getMicrsoft Inter" id='msie'>ie11</a>
+	    	</li>
+	    	<li>
+	    		<a href="#" title="check out safari" id='safari'>safari</a>
+	    	</li>
+	    	<li>
+	    		<a href="#" title="getOpera" id='Opera'>Opera</a>
+	    	</li>
+	    </ul>
+    </div>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+

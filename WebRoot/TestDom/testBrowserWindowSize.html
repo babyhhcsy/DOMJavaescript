@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>testBrowserWindowSize.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="../base/dom.js"></script>
+    <script type="text/javascript">
+	
+    function afterload (){
+    	var screen = DOM.getBrowserWindowSize();
+    	alert(screen.width);
+    	alert(screen.height);
+    	var Person = {
+    		name:'chen',
+    		sex:19
+    	}
+    	DOM.log.writeRaw("hello world");
+    	DOM.log.write("<strong>This is strong Type</strong>");
+    	DOM.log.write(Person);
+    }
+    </script>
+
+  </head>
+  
+  <body onload="afterload();">
+    This is my HTML page. <br>
+  </body>
+</html>

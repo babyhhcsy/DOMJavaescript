@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TestWizUtil..html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="../base/wiz.js"></script>
+    <script type="text/javascript">
+    function init(){
+    	var win = window;
+	     var range=win.getSelection().getRangeAt(0); 
+	     var container = win.document.createElement('div'); 
+	     container.appendChild(range.cloneContents()); 
+	     alert(container.innerHTML); 	
+    };
+    </script>
+  </head>
+  
+  <body>
+    This is my HTML page. <br>
+    <div>weww</div><br/>
+    <span>你好啊，神啊！</span>
+    <input type="submit" onclick="init();" /> 
+  </body>
+</html>
